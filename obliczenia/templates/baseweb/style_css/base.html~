@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-bottom: 60px;
+    font: 12px/20px Arial, Helvetica, sans-serif;
+    color: #D6D6D6;
+    background: #191A1B url(images/bg.gif) repeat-x top;
+}
+
+h1 {
+    padding-left: 40px;
+    font: normal 28px/46px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    letter-spacing: -1px;
+    color: White;
+}
+
+h1 a {
+    text-decoration: none;
+    color: White;
+}
+
+h1 a:hover {
+    text-decoration: none;
+    color: #FAE7D5;
+}
+
+h2 {
+    font: normal 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #86B226;
+}
+
+p {
+    padding: 10px 0;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: #F8821B;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#main {
+    margin: 0 auto;
+    width: 900px;
+}
+
+#header {
+    height: 46px;
+    background: #515E6E url(images/header.jpg) no-repeat;
+}
+
+#menu {
+    height: 46px;
+    text-align: right;
+    background: #637383 url(images/menu.jpg) no-repeat;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0 60px 0 0;
+}
+
+#menu ul li {
+    display: inline;
+    padding: 0;
+}
+
+#menu ul li a {
+    padding: 0 0 0 50px;
+    font-size: 14px;
+    line-height: 46px;
+    text-transform: uppercase;
+    color: White;
+}
+
+#menu ul li a:hover {
+    text-decoration: none;
+    color: #FAE7D5;
+}
+
+#middle {
+    padding: 400px 20px 39px 40px;
+    background: #1C1E20 url('https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/b13586a180dbcaf0564c48fa05ae5bdc/large.jpg') no-repeat;
+}
+
+#sidebar {
+    float: left;
+    width: 220px;
+    background: #3D4752 url(images/bg2.gif) repeat-x top;
+}
+
+#sidebar2 {
+    padding: 10px 15px 0 15px;
+    background: url(images/sidebar.jpg) no-repeat top;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 20px 5px 40px 10px;
+}
+
+#sidebar ul li {
+    padding: 0 0 0 18px;
+    background: url(images/arrow.gif) no-repeat;
+}
+
+#sidebar ul li a {
+    padding: 0;
+    line-height: 22px;
+}
+
+#right {
+    float: right;
+    width: 560px;
+    background: #3D4752 url(images/bg2.gif) repeat-x top;
+}
+
+#right2 {
+    padding: 10px 15px 0 15px;
+    background: url(images/right.jpg) no-repeat top;
+}
+
+.box {
+    padding: 10px 0 30px 0;
+}
+
+#right ul {
+    padding: 10px 0 10px 35px;
+}
+
+#right ul li {
+    padding: 0;
+    text-align: justify;
+}
+
+.clearing {
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+}
+
+#footer {
+    clear: both;
+    height: 104px;
+    background: url(images/footer.gif) repeat-x top;
+}
+
+#footer p {
+    line-height: 40px;
+    text-align: center;
+}
+
+
+</style>
+
+<head>
+    <title>Through The Woods - Free Alpha Studio Web Template</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <h1><a href="#">Compression device</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About </a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div id="middle">
+            <div id="sidebar"><div id="sidebar2">
+                    <h2>Donec laoreet</h2>
+                    <ul>
+                        <li><a href="#">Class aptent</a></li>
+                        <li><a href="#">Taciti sociosqu</a></li>
+                        <li><a href="#">Ad litora torquent</a></li>
+                        <li><a href="#">Per conubia nostra</a></li>
+                        <li><a href="#">Nulla sit amet libero</a></li>
+                        <li><a href="#">Suspendisse potenti</a></li>
+                        <li><a href="#">Morbi bibendum</a></li>
+                    </ul>
+                    <h2>Proin suscipit</h2>
+                    <ul>
+                        <li><a href="#">Arcu quis erat</a></li>
+                        <li><a href="#">Praesent mollis</a></li>
+                        <li><a href="#">Praesent interdum</a></li>
+                        <li><a href="#">Suspendisse potenti</a></li>
+                        <li><a href="#">Morbi bibendum</a></li>
+                        <li><a href="#">Praesent luctus</a></li>
+                        <li><a href="#">Taciti sociosqu</a></li>
+                    </ul>
+                    <h2>Sed interdum</h2>
+                    <ul>
+                        <li><a href="#">Arcu vitae dolor</a></li>
+                        <li><a href="#">Imperdiet vehicula</a></li>
+                        <li><a href="#">Praesent luctus</a></li>
+                        <li><a href="#">Taciti sociosqu</a></li>
+                        <li><a href="#">Praesent interdum</a></li>
+                        <li><a href="#">Suspendisse potenti</a></li>
+                        <li><a href="#">Morbi bibendum</a></li>
+                    </ul>
+            </div></div>
+            <div id="right"><div id="right2">
+                    <h2>Terms of use</h2>
+                    <div class="box">
+                        <p>The template is released under the <a href="http://creativecommons.org/licenses/by/2.5/" target="_blank">Creative Commons Attribution 2.5</a> license. 
+                        This means it can be used for both private and commercial purposes, edited freely or redistributed as long as you keep the link back to Alpha Studio.
+                        The link, however, can be moved to any other place of the site. Do not use the template in connection with sex, violence, discrimination and for other immoral or illegal purposes.</p>
+                        <p>The image comes from <a target="_blank" href="http://www.pdphoto.org/">PD Photo.org</a> and is in public domain.</p>
+                    </div>
+                    <h2>Lorem ipsum</h2>
+                    <div class="box">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla hendrerit lacus at metus. Maecenas venenatis rhoncus nulla.</p>
+                        <ul>
+                            <li>Arcu quis erat</li>
+                            <li>Praesent mollis</li>
+                            <li>Praesent interdum</li>
+                            <li>Suspendisse potenti</li>
+                            <li>Morbi bibendum</li>
+                            <li>Nulla facilisi</li>
+                        </ul>
+                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Proin lobortis nisi nec nisi. Morbi mattis fermentum lectus. Nam vestibulum arcu vulputate ante. Maecenas rutrum dui nec quam.</p>
+                    </div>
+                    <h2>Cum sociis natoque</h2>
+                    <div class="box">
+                        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean rutrum tortor a purus. Quisque convallis nisl ac augue. Nulla aliquam dui. Etiam convallis enim tincidunt erat dapibus tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</p>
+                    </div>
+            </div></div>
+            <div class="clearing">&nbsp;</div>
+        </div>
+        <div id="footer">
+            <p>Copyright &copy; Your Name, designed by <a href="http://www.alphastudio.pl" target="_blank">Alpha Studio</a></p>
+        </div>
+    </div>
+</body>
+</html>

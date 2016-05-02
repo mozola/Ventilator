@@ -1,0 +1,13 @@
+{% extends "baseweb/style_css/base.html"%}
+{% block content %}
+
+<center>
+     	<h1>Input parameters to ventilator:</h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+                             {{ form.as_p }}
+		<button type="submit" class="save btn btn-default">Generate value</button>
+	</form>
+</center>
+
+
+{% endblock %}
