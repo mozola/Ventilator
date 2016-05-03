@@ -50,7 +50,7 @@ def calculations(request):
     K_n21=0.0351*pow((dp_c1/rho_01),(-0.75))*pow((V_str_21),(0.5))*parametry.n2
     K_n31=0.0351*pow((dp_c1/rho_01),(-0.75))*pow((V_str_21),(0.5))*parametry.n3
 #pocztkowe wartosci delta   
-    log_11=0.3364*pow((math.log(K_n11)),(2))-0.446*K_n11+0.1893
+    log_11=(0.3364*(pow((math.log(K_n11)),(2))))-(0.446*(K_n11))+0.1893
     log_21=(0.3364*(pow((math.log(K_n21)),(2))))-(0.446*(K_n21))+0.1893
     log_31=(0.3364*(pow((math.log(K_n31)),(2))))-(0.446*(K_n31))+0.1893
 #zlogarytmizowane wartosci delta
@@ -64,7 +64,40 @@ def calculations(request):
 #predkosc obwodowa wirnika
     u21=(3.14*d_211*parametry.n1)/(60)
 #szerokosc wirnika
-    
+        
+
+#przekroj wylotowy wirnika
+
+#skladowa promieniowa predkosci
+
+#predkosc wzgledna
+
+#katy wyplywu z wirnika
+
+#wskaznik predkosci
+
+#sredni promien na wlocie z wirnika
+
+#szerokosc wirnika na wlocie
+
+#przyspieszenie przeplywu od przekroju 0-0 do przekroju 1-1
+
+#pole rzekroju 0-0
+
+#srednica d0
+
+#predkosc obwodowa w przekroju 1-1
+
+#kat naplywu w przekroju 1-1
+
+#izentropowy przyrost entalpii
+
+#cisnienie na wlocie
+
+#praca techniczna izentropowa
+
+
+
 #tworzenie nowego obiektu z obliczonymi wartosciami
     a=Obliczenia_poczatkowe(
 		           gestosc_wlasciwa=rho_01,
