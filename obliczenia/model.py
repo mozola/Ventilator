@@ -47,7 +47,23 @@ class Obliczenia_poczatkowe(models.Model):
     pole_przekroju_wlotowego=models.FloatField(max_length=5)
     srednica_na_wlocie=models.FloatField(max_length=5)
     predkosc_obwodowa=models.FloatField(max_length=5)
-    kat_naplywu=models.FloatField(max_length=5)
+    kat_naplywu=models.FloatField(max_length=5)    
+    izentropowy_przyrost_entalpii=models.FloatField(max_length=5)
+    cisnienie_na_wylocie=models.FloatField(max_length=5)
+    praca_techniczna_izentropowa=models.FloatField(max_length=5)
+    strata_wystepujaca_podczas_przeplywu_przez_wirnik=models.FloatField(max_length=5)
+    spadek_sprawosci_w_wirniku=models.FloatField(max_length=5)
+    przyrost_entalpii_pomiedzy_przekrojem_0_0_a_2_2=models.FloatField(max_length=5)
+    temperatura_za_wirnikiem=models.FloatField(max_length=5)
+    gestosc_powietrza_za_wirnikiem=models.FloatField(max_length=5)
+    strumien_objetosci_za_wirnikiem=models.FloatField(max_length=5)
+    sprawnosc_termodynamiczna_wirnika=models.FloatField(max_length=5)
+    izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia=models.FloatField(max_length=5)
+    wskaznik_pracy=models.FloatField(max_length=5)
+    promien_r2pi=models.FloatField(max_length=5)
 
-    
+
+
+
+
 
