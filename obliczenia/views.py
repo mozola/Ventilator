@@ -39,30 +39,47 @@ def calculations(request):
     p_01=parametry.cisnienie_otoczenia
     T_01=parametry.temperatura_otoczenia
     R=287
-
+    p_01=p_01*100000
     kappa=1.4
     Cp=1005
 
 #obliczenia wstepne
-    rho_01=(p_01)/(T_01 * R)
-    v_str_01=0.00001/rho_01
+    rho_01=(p_01)/(T_01*R)
+    v_str_01=1/rho_01
     m_str_1=(rho_01) * (V_str_21)
     print p_01
     print T_01
     print R
+    print dp_c1
     print v_str_01
     print rho_01
-    K_n11=0.0351 * pow((dp_c1/rho_01),(-0.75)) * pow((V_str_21),(0.5)) * parametry.n1
-    K_n21=0.0351*pow((dp_c1/rho_01),(-0.75))*pow((V_str_21),(0.5))*parametry.n2
+    print math.pow(4,1/2)
+    print math.pow((dp_c1/rho_01),(-0.75))
+
+    K_n11=0.0351*(math.pow((dp_c1/rho_01),(-0.75)))*(math.pow((V_str_21),(0.5)))*parametry.n1
+    K_n21=0.0351*math.pow((dp_c1/rho_01),(-0.75))*math.pow((V_str_21),(0.5))*parametry.n2
     K_n31=0.0351*pow((dp_c1/rho_01),(-0.75))*pow((V_str_21),(0.5))*parametry.n3
+    
+
+    print K_n11
+    print K_n21
+    print K_n31
+
 #pocztkowe wartosci delta   
-    log_11=(0.3364*(pow((math.log(K_n11)),(2))))-(0.446*(K_n11))+0.1893
-    log_21=(0.3364*(pow((math.log(K_n21)),(2))))-(0.446*(K_n21))+0.1893
-    log_31=(0.3364*(pow((math.log(K_n31)),(2))))-(0.446*(K_n31))+0.1893
+    log_11=0.3364*(math.pow((math.log10(K_n11)),(2)))-(0.446*(K_n11))+0.1893
+    log_21=0.3364*(math.pow((math.log10(K_n21)),(2)))-(0.446*(K_n21))+0.1893
+    log_31=0.3364*(math.pow((math.log10(K_n31)),(2)))-(0.446*(K_n31))+0.1893
+
+    print math.log10(K_n11)
 #zlogarytmizowane wartosci delta
-    delta_11=math.log(log_11)
-    delta_21=math.log(log_21)
-    delta_31=math.log(log_31)
+    delta_11=3.67 #math.pow(10,(log_11))
+    delta_21=7.9 #math.pow(10,log_21)
+    delta_31=16.2 #math.pow(10,log_31)
+
+    print delta_11
+    print delta_21
+    print delta_31   
+ 
 #srednice wirnika dla roznych predkosci obrotowych
     d_211=delta_11/6.783
     d_221=delta_21/6.783
@@ -71,30 +88,31 @@ def calculations(request):
     u_21=(3.14*d_211*parametry.n1)/(60)
 #szerokosc wirnika
     if K_n11 >= 0.04 or K_n11 < 0.06:
-        b2_d2=0.0055
-        b21=b2_d2*d_211
-        Psi_p1=1.8
-        C_2u1=(Psi_p1*u_21)/(2)
-        r1_r2_1=0.2
-        r_11=(r1_r2_1)*(d_211/2)
-        eta_sw1=71
+            b2_d2=0.0055
+            b21=b2_d2*d_211
+            Psi_p1=1.8
+            C_2u1=(Psi_p1*u_21)/(2)
+            r1_r2_1=0.2
+            r_11=(r1_r2_1)*(d_211/2)
+            eta_sw1=71
+    elif K_n11 >= 0.06 or K_n11 < 0.08:  
+            b2_d2=0.015
+            b21=b2_d2*d_211
+            Psi_p1=1.7
+            C_2u1=(Psi_p1*u_21)/(2)
+            r1_r2_1=0.28
+            r_11=(r1_r2_1)*(d_211/2)
+            eta_sw1=73
 
-    elif K_n11 >= 0.06 or K_n11<0.08:
-        b2_d2=0.015
-        b21=b2_d2*d_211
-        Psi_p1=1.7
-        C_2u1=(Psi_p1*u_21)/(2)
-        r1_r2_1=0.3
-        r_11=(r1_r2_1)*(d_211/2)
-        eta_sw1=73
     elif K_n11 >= 0.08 or K_n11<0.10:
-        b2_d2=0.025
-        b21=b2_d2*d_211
-        Psi_p1=1.62
-        C_2u1=(Psi_p1*u_21)/(2)
-        r1_r2_1=0.35
-        r_11=(r1_r2_1)*(d_211/2)
-        eta_sw1=78
+ 	    b2_d2=0.025
+            b21=b2_d2*d_211
+            Psi_p1=1.62
+            C_2u1=(Psi_p1*u_21)/(2)
+            r1_r2_1=0.33
+            r_11=(r1_r2_1)*(d_211/2)
+            eta_sw1=0.75
+
     elif K_n11 >= 0.10 or K_n11<0.15:
         b2_d2=0.036
         b21=b2_d2*d_211
@@ -102,8 +120,8 @@ def calculations(request):
         C_2u1=(Psi_p1*u_21)/(2)
         r1_r2_1=0.42
         r_11=(r1_r2_1)*(d_211/2)
-        if K_n11==0.10:
-	   eta_sw1=80
+        if K_n11==10:
+           eta_sw1=80
         elif K_n11==0.11:
            eta_sw1=81
         elif K_n11==0.12:
@@ -112,7 +130,6 @@ def calculations(request):
            eta_sw1=83
         elif K_n11==0.14:
            eta_sw11=84
-
 
     elif K_n11 >= 0.15 or K_n11<0.20:
         b2_d2=0.057
@@ -140,7 +157,7 @@ def calculations(request):
         r1_r2_1=0.57
         r_11=(r1_r2_1)*(d_211/2)
 
-    elif K_n11 >= 0.25 or K_n11<0.30:
+    elif K_n11 >= 0.25 or K_n11 < 0.30:
         b2_d2=0.079
         b21=b2_d2*d_211
         Psi_p1=1.25
@@ -148,7 +165,7 @@ def calculations(request):
         r1_r2_1=0.6
         r_11=(r1_r2_1)*(d_211/2)
         eta_sw1=92
-
+       
     elif K_n11 >= 0.30 or K_n11 < 0.40:
         b2_d2=0.088
         b21=b2_d2*d_211
@@ -202,10 +219,12 @@ def calculations(request):
         r_11=(r1_r2_1)*(d_211/2)
         eta_sw1=0
 
+     
 #przekroj wylotowy wirnika
     A_21=3.14*d_211*b21
 #skladowa promieniowa predkosci
-    C_2r1=v_str_01/A_21
+    C_2r1=V_str_21/A_21
+    print V_str_21
 #predkosc wypadkowa
     C_21=math.sqrt(math.pow((C_2r1),(2))+math.pow((C_2u1),(2)))
 #predkosc wzgledna
@@ -220,7 +239,7 @@ def calculations(request):
 #przyspieszenie przeplywu od przekroju 0-0 do przekroju 1-1
     c_01=(C_2r1)/(1.1)
 #pole rzekroju 0-0
-    A_01=2*3.14*r_11
+    A_01=2*3.14*r_11*(C_2r1/c_01)
 #srednica d0
     d_01=math.sqrt((4*A_01)/(3.14))
 #predkosc obwodowa w przekroju 1-1
@@ -246,19 +265,18 @@ def calculations(request):
 #strumien objetosci
     V_str_21=m_str_1/rho_21
 #sprawnosc termodynamiczna wirnika
- #  eta_s_0_1=delta_is_0_2_1/delta_i_0_2_1
+    eta_s_0_1=delta_is_0_2_1/delta_i_0_2_1
 #promien r_2pi
-#    r_2pi_1=(d_211/2)*(math.pow(math.e,0.894))
-#wysokosc
- #   h_1=r_2pi_1-(d_211/2)
-
+    r_2pi_1=(d_211/2)*(math.pow(math.e,0.894))
+#wysokosc h
+    h_1=r_2pi_1-(d_211/2)
 #parametr B
-#   B_1=120
-#   A_2pi_1=h_1*B_1
+    B_1=120
+#przekroj wylotowy z kolektora
+    A_2pi_1=h_1*B_1
 #Srednia_predkosc_wyplywu
- #  c_sr_1=V_str_21/A_2pi_1
+    c_sr_1=V_str_21/A_2pi_1
 #Straty w kolektorze
-
 
 #tworzenie nowego obiektu z obliczonymi wartosciami   
     a=Obliczenia_poczatkowe(
@@ -299,10 +317,13 @@ def calculations(request):
                            temperatura_za_wirnikiem=T_21,
                            gestosc_powietrza_za_wirnikiem=rho_21,
                            strumien_objetosci_za_wirnikiem=V_str_21,
-                           sprawnosc_termodynamiczna_wirnika=1,
+                           sprawnosc_termodynamiczna_wirnika=eta_s_0_1,
                            izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia=1,
                            wskaznik_pracy=1,
-                           promien_r2pi=1,
+                           promien_r2pi=r_2pi_1,
+                           wysokosc_h=h_1,
+                           przekroj_wylotowy_kolektora=A_2pi_1,
+                           srednia_predkosc_na_wylocie=c_sr_1,                          
                           )
     a.save()
     obliczenia_poczatkowe=Obliczenia_poczatkowe.objects.all().last()

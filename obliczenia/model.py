@@ -15,7 +15,7 @@ class Parametry_wejsciowe(models.Model):
        
 
 class Obliczenia_poczatkowe(models.Model):
-    gestosc_wlasciwa=models.FloatField(max_length=5)
+    gestosc_wlasciwa=models.FloatField(max_length=10)
     objetosc_wlasciwa=models.FloatField(max_length=5)
     strumien_masy=models.FloatField(max_length=5)
     wskaznik_szybkobierznosci_1=models.FloatField(max_length=5)
@@ -61,9 +61,9 @@ class Obliczenia_poczatkowe(models.Model):
     izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia=models.FloatField(max_length=5)
     wskaznik_pracy=models.FloatField(max_length=5)
     promien_r2pi=models.FloatField(max_length=5)
-
-
-
+    wysokosc_h=models.FloatField(max_length=5)
+    przekroj_wylotowy_kolektora=models.FloatField(max_length=5)
+    srednia_predkosc_na_wylocie=models.FloatField(max_length=5)
 
 
 
