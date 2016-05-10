@@ -8,7 +8,7 @@ class Parametry_wejsciowe(models.Model):
     cisnienie_otoczenia=models.FloatField(max_length=5)
     temperatura_otoczenia=models.FloatField(max_length=5) 
   #  sprezany_czynnik=models.FloatField(max_length=10,choice=czynniki)
-    cieplo_parowania=models.FloatField(max_length=5) 
+  #  cieplo_parowania(J/kg)=models.FloatField(max_length=5) 
     n1=models.IntegerField(max_length=5)
     n2=models.IntegerField(max_length=5)
     n3=models.IntegerField(max_length=5)
@@ -39,7 +39,8 @@ class Obliczenia_poczatkowe(models.Model):
     skladowa_promieniowa_predkosci=models.FloatField(max_length=5)
     predkosc_wypadkowa=models.FloatField(max_length=5)
     predkosc_wzgledna=models.FloatField(max_length=5)
-    katy_wyplywu_z_wirnika=models.FloatField(max_length=5)
+    katy_wyplywu_z_wirnika_alpha_1=models.FloatField(max_length=5)
+    katy_wyplywu_z_wirnika_beta_1=models.FloatField(max_length=5)
     wskaznik_predkosci=models.FloatField(max_length=5)
     sredni_promien_na_wlocie_do_lopatki=models.FloatField(max_length=5)
     szerokosc_wirnika_na_wlocie=models.FloatField(max_length=5)
@@ -63,7 +64,5 @@ class Obliczenia_poczatkowe(models.Model):
     promien_r2pi=models.FloatField(max_length=5)
     wysokosc_h=models.FloatField(max_length=5)
     przekroj_wylotowy_kolektora=models.FloatField(max_length=5)
-    srednia_predkosc_na_wylocie=models.FloatField(max_length=5)
-
-
+    srednia_predkosc_na_wylocie=models.FloatField(max_length=5)    
 

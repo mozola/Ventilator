@@ -7,169 +7,168 @@
 		<h2 id="test">Wyniki obliczen wentylatora mlynowego</h2>
 		</br>
 		<img>
-		<table border="2px" width=600px>
+		<table border="2px" width=630px>
 			<tr>
-				<td>lp.</td><td>Parametry:</td><td>Wyniki:</td>
+				<td>lp.</td><td>Parametry:</td><td>Wyniki:</td><td>Jednostki:</td>
 			</tr>
 			<tr>
-				<td>1</td><td>Gestosc wlasciwa:</td><td>{{ parametry.gestosc_wlasciwa }}</td>
+				<td>1</td><td>Gestosc wlasciwa:</td><td>{{ parametry.gestosc_wlasciwa }}</td><td>kg/m^3</td>
 			</tr>
 			<tr>
-                                <td>2</td><td>Objetosc wlasciwa:</td><td>{{ parametry.objetosc_wlasciwa }}</td>
+                                <td>2</td><td>Objetosc wlasciwa:</td><td>{{ parametry.objetosc_wlasciwa }}</td><td>m^3/kg</td>
                         </tr>
 			<tr>
-                                <td>3</td><td>Strumien masy</td><td> {{ parametry.strumien_masy  }} </td>
+                                <td>3</td><td>Strumien masy</td><td> {{ parametry.strumien_masy  }} </td><td>kg/ s</td>
                         </tr>
 			<tr>
-                                <td>4</td><td>Wskazniki szybkbierznosci:</td><td>- </td>
+                                <td>4</td><td>Wskazniki szybkbierznosci:</td><td>-</td><td>- </td>
 			</tr>
 
 			<tr>
-			<td>4a</td><td></td><td> {{ parametry.wskaznik_szybkobierznosci_1 }} </td>
+			<td>4a</td><td></td><td> {{ parametry.wskaznik_szybkobierznosci_1 }} </td><td>-</td>
 			</tr>
 			<tr>
-                                <td>4b</td><td></td><td>{{ parametry.wskaznik_szybkobierznosci_2 }}</td>
+                                <td>4b</td><td></td><td>{{ parametry.wskaznik_szybkobierznosci_2 }}</td><td>-</td>
                         </tr>
 			<tr>
-                                <td>4c</td><td></td><td>{{ parametry.wskaznik_szybkobierznosci_3 }}</td>
-                        </tr>
-
-			<tr>
-                                <td>5</td><td>Wskazniki srednicy:</td><td></td>
+                                <td>4c</td><td></td><td>{{ parametry.wskaznik_szybkobierznosci_3 }}</td><td>-</td>
                         </tr>
 
 			<tr>
-                                <td>5a</td><td></td><td>{{ parametry.wskaznik_srednicy_1 }}</td>
+                                <td>5</td><td>Wskazniki srednicy:</td><td>-</td><td>-</td>
                         </tr>
 
 			<tr>
-                                <td>5a</td><td></td><td>{{ parametry.wskaznik_srednicy_2 }}</td>
+                                <td>5a</td><td></td><td>{{ parametry.wskaznik_srednicy_1 }}</td><td>-</td>
                         </tr>
 
 			<tr>
-                                <td>5c</td><td></td><td>{{ parametry.wskaznik_srednicy_3 }}</td>
+                                <td>5a</td><td></td><td>{{ parametry.wskaznik_srednicy_2 }}</td><td>-</td>
+                        </tr>
+
+			<tr>
+                                <td>5c</td><td></td><td>{{ parametry.wskaznik_srednicy_3 }}</td><td>-</td>
                         </tr>
 			<tr>
-                                <td>6</td><td>Srednice wirnikow (ze wzgledu na wskazniki szybkobierznosci)</td><td></td>
+                                <td>6</td><td>Srednice wirnikow (ze wzgledu na wskazniki szybkobierznosci)</td><td>-</td><td>-</td>
                         </tr>
 			<tr>
-                                <td>6a</td><td></td><td>{{ parametry.srednica_wirnika_1 }}</td>
+                                <td>6a</td><td></td><td>{{ parametry.srednica_wirnika_1 }}</td><td>m</td>
                         </tr>
 			<tr>
-                                <td>6b</td><td></td><td>{{ parametry.srednica_wirnika_2 }}</td>
+                                <td>6b</td><td></td><td>{{ parametry.srednica_wirnika_2 }}</td><td>m</td>
                         </tr>
 			<tr>
-                                <td>6c</td><td></td><td> {{ parametry.srednica_wirnika_3 }} </td>
+                                <td>6c</td><td></td><td> {{ parametry.srednica_wirnika_3 }} </td><td>m</td>
                         </tr>
                         <tr>
-                                <td>7</td><td>Predkosc obwodowa wirnika:</td><td>{{parametry.predkosc_obwodowa_wirnika }}</td>
+                                <td>7</td><td>Predkosc obwodowa wirnika:</td><td>{{parametry.predkosc_obwodowa_wirnika }}</td><td>m/s</td>
                         </tr>
 			<tr>
-                                <td>8</td><td>Szerokosc wirnika:</td><td>{{parametry.szerokosc_wirnika}}</td>
+                                <td>8</td><td>Szerokosc wirnika:</td><td>{{parametry.szerokosc_wirnika}}</td><td>mm</td>
                         </tr>
                         <tr>
-                                <td>9</td><td>Przekroj wylotowy wirnika:</td><td>{{ parametry.przekroj_wylotowy_wirnika }}</td>
+                                <td>8</td><td>Szerokosc wirnika:</td><td>{{parametry.szerokosc_wirnika}}</td><td>mm</td>
+                        </tr>
+                        <tr>
+                                <td>9</td><td>Skladowa obwodowa predkosci:</td><td>{{parametry.skladowa_obwodowa_predkosci}}</td><td>m/s</td>
+                        </tr>
+                        <tr>
+                                <td>10</td><td>Przekroj wylotowy wirnika:</td><td>{{ parametry.przekroj_wylotowy_wirnika }}</td><td>m^2</td>
                         </tr>
 			<tr>
-                                <td>10</td><td> Skladowa promieniowa predkosci:</td><td>{{ parametry.skladowa_promieniowa_predkosci }}</td>
+                                <td>11</td><td> Skladowa promieniowa predkosci:</td><td>{{ parametry.skladowa_promieniowa_predkosci }}</td><td>m/s</td>
                         </tr>
                         <tr>
-                                <td>11</td><td>Predkosc wzgledna:</td><td>{{ parametry.predkosc_wzgledna }}</td>
+                                <td>12</td><td>Predkosc wypadkowa:</td><td>{{ parametry.predkosc_wypadkowa }}</td><td>m/s</td>
+                        </tr>
+
+                        <tr>
+                                <td>12</td><td>Predkosc wzgledna:</td><td>{{ parametry.predkosc_wzgledna }}</td><td>m/s</td>
                         </tr>
 			<tr>
-                                <td>12</td><td>Katy wyplywu z wirnika:</td><td>{{ parametry.katy_wyplywu_z_wirnika }}</td>
+                                <td>13</td><td>Katy wyplywu z wirnika:</td><td>-</td><td>-</td>
+                        </tr>
+ 
+			<tr>
+                                <td></td><td>alpha</td><td>{{ parametry.katy_wyplywu_z_wirnika_beta_1 }}</td><td>deg C</td>
                         </tr>
                         <tr>
-                                <td>13</td><td>Wskaznik predkosci</td><td> {{ parametry.wskaznik_predkosci }}</td>
+                                <td></td><td>beta</td><td>{{ parametry.katy_wyplywu_z_wirnika_alpha_1 }}</td><td>deg C</td>
+                        </tr>
+                        <tr>
+                        <tr>
+                                <td>13</td><td>Wskaznik predkosci</td><td> {{ parametry.wskaznik_predkosci }}</td><td>-</td>
                         </tr>
 
 			<tr>
-                                <td>14</td><td>Sredni promien na wlocie lopatki: </td><td> {{ parametry.sredni_promien_na_wlocie_do_lopatki }} </td>
+                                <td>14</td><td>Sredni promien na wlocie lopatki:</td><td>{{ parametry.sredni_promien_na_wlocie_do_lopatki }} </td><td>mm</td>
                         </tr>
                         <tr>
-                                <td>15</td><td>Szerokosc wirnika na wlocie: </td><td>{{ parametry.szerokosc_wirnika_na_wlocie }}</td>
+                                <td>15</td><td>Szerokosc wirnika na wlocie: </td><td>{{ parametry.szerokosc_wirnika_na_wlocie }}</td><td>mm</td>
                         </tr>
 			<tr>
-                                <td>16</td><td>Przyspieszenie przeplywu od przekroju 0-0 do przekroju 1-1 </td><td>{{ parametry.przyspieszenie_przeplywu_na_wlocie }}</td>
+                                <td>16</td><td>Przyspieszenie przeplywu od przekroju 0-0 do przekroju 1-1 </td><td>{{ parametry.przyspieszenie_przeplywu_na_wlocie }}</td><td>m/s</td>
                         </tr>
                         <tr>
-                                <td>17</td><td>Pole przekroju 0-0: </td><td>{{ parametry.pole_przekroju_wlotowego }}</td>
+                                <td>17</td><td>Pole przekroju 0-0: </td><td>{{ parametry.pole_przekroju_wlotowego }}</td><td>m^3</td>
                         </tr>
 			<tr>
-                                <td>18</td><td>Srednica d0:</td><td>{{ parametry.srednica_na_wlocie }}</td>
+                                <td>18</td><td>Srednica d0:</td><td>{{ parametry.srednica_na_wlocie }}</td><td>mm</td>
                         </tr>
                         <tr>
-                                <td>19</td><td>Predkosc obwodowa w przekroju 1-1:</td><td>{{ parametry.predkosc_obwodowa }}</td>
+                                <td>19</td><td>Predkosc obwodowa w przekroju 1-1:</td><td>{{ parametry.predkosc_obwodowa }}</td><td>m/s</td>
                         </tr>
 			<tr>
-                                <td>20</td><td>Kat naplywu w przekroju 1-1:</td><td>{{ parametry.kat_naplywu }}</td>
+                                <td>20</td><td>Kat naplywu w przekroju 1-1:</td><td>{{ parametry.kat_naplywu }}</td><td>deg</td>
                         </tr>
                         <tr>
-                                <td>21</td><td>Izentropowy przyrost entalpii: </td><td>{{ parametry.izentropowy_przyrost_entalpii }}</td>
+                                <td>21</td><td>Izentropowy przyrost entalpii: </td><td>{{ parametry.izentropowy_przyrost_entalpii }}</td>J/kg
                         </tr>
 			<tr>
-                                <td>22</td><td>Cisnienie na wylocie: </td><td>{{ parametry.cisnienie_na_wylocie }}</td>
+                                <td>22</td><td>Cisnienie na wylocie: </td><td>{{ parametry.cisnienie_na_wylocie }}</td><td>Pa</td>
                         </tr>
                         <tr>
-                                <td>23</td><td>Praca techniczna izentropowa: </td><td>{{ parametry.praca_techniczna_izentropowa}}</td>
+                                <td>23</td><td>Praca techniczna izentropowa: </td><td>{{ parametry.praca_techniczna_izentropowa}}</td><td>J/kg</td>
                         </tr>
 			<tr>
-                                <td>24</td><td>Strata wystepujaca podczas przeplywu przez wirnik:</td><td>{{ parametry.strata_wystepujaca_podczas_przeplywu_przez_wirnik }} </td>
+                                <td>24</td><td>Strata wystepujaca podczas przeplywu przez wirnik:</td><td>{{ parametry.strata_wystepujaca_podczas_przeplywu_przez_wirnik }} </td><td>J/kg</td>
                         </tr>
                         <tr>
-                                <td>25</td><td>Spadek sprawosci w wirniku: </td><td> {{ parametry.spadek_sprawosci_w_wirniku }}</td>
+                                <td>25</td><td>Spadek sprawosci w wirniku: </td><td> {{ parametry.spadek_sprawosci_w_wirniku }}</td><td>%</td>
                         </tr>
 			<tr>
-                                <td>26</td><td>Przyrost entalpii pomiedzy przekrojem 0-0 a 2-2:</td><td>{{ parametry.przyrost_entalpii_pomiedzy_przekrojem_0_0_a_2_2 }}</td>
+                                <td>26</td><td>Przyrost entalpii pomiedzy przekrojem 0-0 a 2-2:</td><td>{{ parametry.przyrost_entalpii_pomiedzy_przekrojem_0_0_a_2_2 }}</td><td>J/kg</td>
                         </tr>
                         <tr>
-                                <td>27</td><td>Temperatura za wirnikiem:</td><td>{{ parametry.temperatura_za_wirnikiem }}</td>
+                                <td>27</td><td>Temperatura za wirnikiem:</td><td>{{ parametry.temperatura_za_wirnikiem }}</td><td>deg C</td>
                         </tr>
 			<tr>
-                                <td>28</td><td>Gestosc powietrza za wirnikiem:</td><td>{{ parametry.gestosc_powietrza_za_wirnikiem }}</td>
+                                <td>28</td><td>Gestosc powietrza za wirnikiem:</td><td>{{ parametry.gestosc_powietrza_za_wirnikiem }}</td><td>kg/m^3</td>
                         </tr>
                         <tr>
-                                <td>29</td><td>Strumien objetosci za wirnikiem: </td><td>{{ parametry.strumien_objetosci_za_wirnikiem}}</td>
+                                <td>29</td><td>Strumien objetosci za wirnikiem: </td><td>{{ parametry.strumien_objetosci_za_wirnikiem}}</td><td> m^3/s</td>
                         </tr>
 			<tr>
-                                <td>30</td><td>Sprawnosc termodynamiczna wirnika: </td><td> {{ parametry.sprawnosc_termodynamiczna_wirnika }} </td>
+                                <td>30</td><td>Sprawnosc termodynamiczna wirnika: </td><td> {{ parametry.sprawnosc_termodynamiczna_wirnika }} </td><td>-</td>
                         </tr>
                         <tr>
-                                <td>31</td><td>Izentropowy przyrost entalpii dla stopnia od ssania do tloczenia: </td><td> {{ parametry.izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia }} </td>
+                                <td>31</td><td>Izentropowy przyrost entalpii dla stopnia od ssania do tloczenia: </td><td> {{ parametry.izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia }} </td><td>J/kg</td>
                         </tr>
 			<tr>
-                                <td>32</td><td>Wskaznik pracy: </td><td> {{ parametry.wskaznik_pracy }} </td>
+                                <td>32</td><td>Wskaznik pracy: </td><td> {{ parametry.wskaznik_pracy }} </td><td>-</td>
                         </tr>
                         <tr>
-                                <td>33</td><td>Promien r2pi </td><td>{{ parametry.promien_r2pi }}</td>
+                                <td>33</td><td>Promien r2pi </td><td>{{ parametry.promien_r2pi }}</td><td>m</td>
                         </tr>
 
 			<tr>
-                                <td>34</td><td>h </td><td></td>
+                                <td>34</td><td>h </td><td>{{ parametry.wysokosc_h }}</td><td>mm</td>
                         </tr>
                         <tr>
-                                <td>35</td><td>Srednia predkosc na wylocie:</td><td></td>
+                                <td>35</td><td>Srednia predkosc na wylocie:</td><td>{{ parametry.srednia_predkosc_na_wylocie }}</td><td>m/s</td>
                         </tr>
-			<tr>
-                                <td>36</td><td>Straty w kolektorze: </td><td></td>
-                        </tr>
-                        <tr>
-                                <td>37</td><td>Srednia predkosc w kolektorze: </td><td></td>
-                        </tr>
-
-
-
-
-
-
-
-
-
-
-
-
 		</table>
 	</center>
-
 
 {% endblock %}
