@@ -6,6 +6,7 @@ import math
 from django.shortcuts import redirect
 from .model import Obliczenia_poczatkowe
 
+
 def major(request):
     return render_to_response('major.html')
 
@@ -39,7 +40,6 @@ def calculations(request):
     p_01=parametry.cisnienie_otoczenia
     T_01=parametry.temperatura_otoczenia
     R=287
-    p_01=p_01*100000
     kappa=1.4
     Cp=1005
 
@@ -237,59 +237,43 @@ def calculations(request):
 
 #izentropowy przyrost entalpii (do tego momentu parametry zgadzaja sie z modelem wynikowym)
     delta_is_0_2_1=((eta_sw1*0.01)*(round(u_21,2))*(C_2u1))-((0.5)*(math.pow(C_21,2)-math.pow(c_01,2)))
-    print 'Izentrop' 
-    print eta_sw1
-    print u_21
-    print C_2u1
-    print C_21
-    print c_01
 
 #cisnienie na wlocie (zdefiniuj cp dla danego gazu)
-    p_21=p_01*math.pow(((delta_is_0_2_1/(Cp*T_01))+1),((kappa)/(kappa-1)))
+    p_21=p_01*(math.pow(((delta_is_0_2_1/(Cp*T_01))+1),((kappa)/(kappa-1))))
+    d_p02=p_21-p_01
 #praca techniczna izentropowa
-    l_ts_0_2c1=(delta_is_0_2_1)+((1/2)*(math.pow(C_21,2)-math.pow(c_01,2)))
+    l_ts_0_2c1=(delta_is_0_2_1)+((0.5)*(math.pow(C_21,2)-math.pow(c_01,2)))
 #strata wystepujaca podczas przeplywu przez wirnik
     h_strat1=(u_21*C_2u1)-(l_ts_0_2c1)
 #spadek sprawnosci w wirniku
     delta_eta_w1=(h_strat1)/(u_21*C_2u1)
 #przyrost entalpii
-    delta_i_0_2_1=((u_21*C_2u1)-(1/2)*(math.pow(C_21,2)-math.pow(c_01,2)))
+    delta_i_0_2_1=(u_21*C_2u1)-(0.5)*(math.pow(C_21,2)-math.pow(c_01,2))
 #przyrost temperatury
     T_21=(delta_i_0_2_1/Cp) + T_01
-
-
-#do tego momentu jest dobrze
-
-
-
 #gestosc powietrza za wirnikiem
-    rho_21=p_21/R*T_21
+    rho_21=(p_21)/(R*T_21)
 #strumien objetosci
     V_str_21=m_str_1/rho_21
 #sprawnosc_termodynaiczna_wirnika
     eta_s_0_1=(delta_is_0_2_1)/(delta_i_0_2_1)*100
-
-    p_t1=round(p_21,0)-p_01
-
+    p_t1=p_21-p_01
 #izentropowy wskaznik dla stopnia od ssania do tloczenia
-    delta_i_sc1=(Cp*T_01)*(math.pow((p_t1/dp_c1),((kappa-1)/(kappa))))
-
+    p_s1=p_21-d_p02
+    peta=p_t1/p_s1
+    peta=peta+1
+    delta_i_sc1=(Cp*T_01)*((math.pow(peta,0.2857))-1)
 #wskaznik pracy
     psi_sc1=(delta_i_sc1)/(0.5*(math.pow(u_21,2)))    
     psi_p1=(psi_sc1)/(eta_s*(1 + delta_eta_pa + delta_eta_sb))
-
 #promien_r2pi
-    B=120
+    B=0.120
     nr2pi=(V_str_21)/((d_211/2)*C_2u1*B)
     r_2pi_1=(d_211/2)*math.pow(math.e , nr2pi)
-    
-    A_2pi=0.0468
-
-    h_1=r_2pi_1-(d_211/2)
-
+    h_1=(r_2pi_1*1000)-((d_211*1000)/2)
 #Srednia_predkosc_wyplywu
-    C_sr_1=V_str_21/A_2pi
-
+    A_2pi1=(h_1*0.001)*B
+    C_sr_1=V_str_21/A_2pi1
 #Straty w kolektorze
      
 #tworzenie nowego obiektu z obliczonymi wartosciami   
@@ -333,11 +317,11 @@ def calculations(request):
                            gestosc_powietrza_za_wirnikiem=round(rho_21,2),
                            strumien_objetosci_za_wirnikiem=round(V_str_21,3),
                            sprawnosc_termodynamiczna_wirnika=round(eta_s_0_1,0),
-                           izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia=1,
+                           izentropowy_przyrost_entalpii_dla_stopnia_od_ssania_do_tloczenia=round(delta_i_sc1,1),
                            wskaznik_pracy=round(psi_p1,2),
                            promien_r2pi=round(r_2pi_1,3),
                            wysokosc_h=round(h_1,3),
-                           przekroj_wylotowy_kolektora=round(A_2pi,4),
+                           przekroj_wylotowy_kolektora=round(A_2pi1,4),
                            srednia_predkosc_na_wylocie=round(C_sr_1,1),
                           )
     a.save()

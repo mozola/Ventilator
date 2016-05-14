@@ -1,17 +1,17 @@
 from django.db import models
 
 class Parametry_wejsciowe(models.Model):
-    pierwszy_strumien_wydajnosci=models.FloatField(max_length=5) 
-    drugi_strumien_wydajnosci=models.FloatField(max_length=5)    
-    trzeci_strumien_wydajnosci=models.FloatField(max_length=5)        
-    przyrost_cisnienia_calkowitego=models.FloatField(max_length=5)
-    cisnienie_otoczenia=models.FloatField(max_length=5)
-    temperatura_otoczenia=models.FloatField(max_length=5) 
+    pierwszy_strumien_wydajnosci=models.FloatField("strumien wydajnosci 1 (m^3/s):",max_length=5) 
+    drugi_strumien_wydajnosci=models.FloatField("strumien wydajnosci 2 (m^3/s):",max_length=5)    
+    trzeci_strumien_wydajnosci=models.FloatField("strumien wydajnosci 3 (m^3/s):",max_length=5)        
+    przyrost_cisnienia_calkowitego=models.FloatField("Przyrost cisnienia calkowitego (Pa):",max_length=5)
+    cisnienie_otoczenia=models.FloatField("Cisnienie otoczenia (Pa):",max_length=5)
+    temperatura_otoczenia=models.FloatField("Temperatura otoczenia (K):",max_length=5) 
   #  sprezany_czynnik=models.FloatField(max_length=10,choice=czynniki)
   #  cieplo_parowania(J/kg)=models.FloatField(max_length=5) 
-    n1=models.IntegerField(max_length=5)
-    n2=models.IntegerField(max_length=5)
-    n3=models.IntegerField(max_length=5)
+    n1=models.IntegerField("n1 (obr/min):",max_length=5)
+    n2=models.IntegerField("n2 (obr/min)",max_length=5)
+    n3=models.IntegerField("n3 (obr/min)",max_length=5)
        
 
 class Obliczenia_poczatkowe(models.Model):
