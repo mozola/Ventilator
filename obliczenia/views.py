@@ -5,10 +5,11 @@ from .model import Parametry_wejsciowe
 import math
 from django.shortcuts import redirect
 from .model import Obliczenia_poczatkowe
-
+from .model import Aktualnosci
 
 def major(request):
-    return render_to_response('major.html')
+    aktualnosci=Aktualnosci.objects.all()
+    return render(request,'major.html',{'parametry' : aktualnosci})
 
 
 def parametry_poczatkowe_forms(request):

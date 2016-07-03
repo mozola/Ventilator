@@ -66,3 +66,7 @@ class Obliczenia_poczatkowe(models.Model):
     przekroj_wylotowy_kolektora=models.FloatField(max_length=5)
     srednia_predkosc_na_wylocie=models.FloatField(max_length=5)    
 
+class Aktualnosci(models.Model):
+    tytul=models.CharField(max_length=70)
+    tekst=models.TextField()
+    autor=models.CharField(max_length=70)
