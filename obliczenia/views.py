@@ -12,6 +12,7 @@ def major(request):
     return render(request,'major.html',{'parametry' : aktualnosci})
 
 
+
 def parametry_poczatkowe_forms(request):
     if request.method == "POST":
        form=Parametry_wejscioweForm(request.POST)
@@ -329,6 +330,9 @@ def calculations(request):
     obliczenia_poczatkowe=Obliczenia_poczatkowe.objects.all().last()
     return render( request,'przykladowe_obliczenia_view.html',{'parametry':obliczenia_poczatkowe})
 
+
+def oprojekcie(request):
+    return render_to_response("o_projekcie.html")
 
 
 

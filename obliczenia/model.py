@@ -1,4 +1,10 @@
 from django.db import models
+from django.utils.timezone import now as timezone_now
+import os
+from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from django.core.urlresolvers import NoReverseMatch
+
 
 class Parametry_wejsciowe(models.Model):
     pierwszy_strumien_wydajnosci=models.FloatField("strumien wydajnosci 1 (m^3/s):",max_length=5) 
@@ -66,7 +72,22 @@ class Obliczenia_poczatkowe(models.Model):
     przekroj_wylotowy_kolektora=models.FloatField(max_length=5)
     srednia_predkosc_na_wylocie=models.FloatField(max_length=5)    
 
+
 class Aktualnosci(models.Model):
     tytul=models.CharField(max_length=70)
     tekst=models.TextField()
     autor=models.CharField(max_length=70)
+
+def upload_to(instance,filename):
+    now=timezone_now()
+    filename_base, filename_ext=os.path.splitext(filename)
+    return 'producrs/%s/%s%s' % (
+       instance.product.slug,
+       now.strftime("%Y%m%d%H%M%S"),
+       filename_ext.lower(),
+    )
+
+class Realizowane_projekty(models.Model):
+     tytul_projektu=models.CharField(max_length=100)
+     opis=models.TextField()
+     zdjecie_projektu=models.ImageField(upload_to='temps/', default='temps/no_img.jpg')

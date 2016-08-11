@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^result/$','obliczenia.views.results'),
     url(r'^projects/$','obliczenia.views.projects'),
     url(r'^ventilator/calculation$','obliczenia.views.calculations'),
+    url(r'^oprojekcie/$', 'obliczenia.views.oprojekcie'),
 )

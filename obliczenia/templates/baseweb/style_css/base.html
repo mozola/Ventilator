@@ -9,10 +9,13 @@
 }
 
 body {
+    margin-top: 60px;
     padding-bottom: 60px;
     font: 12px/20px Arial, Helvetica, sans-serif;
     color: #D6D6D6;
     background: #191A1B url(images/bg.gif) repeat-x top;
+    background-image: url("http://in2gpu.com/wp-content/uploads/2015/02/engine-wallpaper-4.jpg");
+    background-attachment:fixed;
 }
 
 h1 {
@@ -25,6 +28,8 @@ h1 {
 h1 a {
     text-decoration: none;
     color: White;
+    font-size: 50px;
+    font: Arial;
 }
 
 h1 a:hover {
@@ -34,7 +39,7 @@ h1 a:hover {
 
 h2 {
     font: normal 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
-    color: #86B226;
+    color: white;
 }
 
 p {
@@ -53,16 +58,33 @@ a:hover {
 
 #main {
     margin: 0 auto;
-    width: 900px;
+    width: 1200px;
 }
 
 #header {
-    height: 46px;
+    height: 140px;
+    text-align: center; 
     background: #515E6E url(images/header.jpg) no-repeat;
+    opacity:0.7;
+    padding-top:50px;
 }
 
+#header a{
+    text-align:center;
+    font-style: Tahoma;
+    font:80px Times;
+    margin-top: 20px;
+}
+
+#header i{
+    font: 15px Tahoma;
+    font-style: italic;
+}
+
+
 #menu {
-    height: 46px;
+    margin-bottom: 5px;
+    height: 50px;
     text-align: right;
     background: #637383 url(images/menu.jpg) no-repeat;
 }
@@ -74,11 +96,11 @@ a:hover {
 
 #menu ul li {
     display: inline;
-    padding: 0;
+    padding: 0; 
 }
 
 #menu ul li a {
-    padding: 0 0 0 50px;
+    padding: 0 0 0 140px;
     font-size: 14px;
     line-height: 46px;
     text-transform: uppercase;
@@ -91,9 +113,10 @@ a:hover {
 }
 
 #middle {
-    padding: 530px 0px 10px 0px;
-    background: #1C1E20 url('https://d2t1xqejof9utc.cloudfront.net/screenshots/pics/b13586a180dbcaf0564c48fa05ae5bdc/large.jpg')no-repeat;
-    text-align:justify;
+    padding: 5px 0px 0px 0px;
+    background: #1C1E20 url('')no-repeat;
+    text-align:center;
+    opacity:0.95;    
 }
 
 #sidebar {
@@ -102,14 +125,21 @@ a:hover {
     background: #3D4752 url(images/bg2.gif) repeat-x top;
 }
 
+#sidebar2 h2
+{
+   font: 20px Tahoma;
+}
+
 #sidebar2 {
-    padding: 10px 15px 0 15px;
+    padding:20px 10px 0 15px;
     background: url(images/sidebar.jpg) no-repeat top;
+    font: 14px Times;
 }
 
 #sidebar ul {
     list-style: none;
     padding: 20px 5px 40px 10px;
+    font: 14px Arial;
 }
 
 #sidebar ul li {
@@ -118,18 +148,20 @@ a:hover {
 }
 
 #sidebar ul li a {
-    padding: 0;
+    padding: 2;
     line-height: 22px;
+    color: white;
+    font: 13px Tahoma;
 }
 
 #right {
     float: right;
-    width: 650px;
-    background: #3D4752 url(images/bg2.gif) repeat-x top;
+    width: 975px;
+    background: #3D4752 url(images/bg2.gif) repeat-x top; 
 }
 
 #right2 {
-    padding: 10px 15px 0 15px;
+    padding: 20px 15px 0 15px;
     background: url(images/right.jpg) no-repeat top;
 }
 
@@ -138,7 +170,13 @@ a:hover {
 }
 
 #right ul {
-    padding: 10px 0 10px 35px;
+   
+}
+
+#right p{
+    padding:35px;
+    font: 15px Times;
+    text-align: justify;
 }
 
 #right ul li {
@@ -163,7 +201,6 @@ a:hover {
     text-align: center;
 }
 
-
 </style>
 
 <head>
@@ -179,11 +216,13 @@ a:hover {
     <div id="main">
         <div id="header">
             <h1><a href="/">Maszyny sprezajace</a></h1>
+	    </br>
+	    <i>"Proste i przyjemne projektowanie urzadzen sprezajacych."</i>
         </div>
         <div id="menu">
             <ul>
                 <li><a href="/">Strona glowna</a></li>
-                <li><a href="#">O projekcie </a></li>
+                <li><a href="/oprojekcie/">O projekcie </a></li>
                 <li><a href="/projects/">Projekty</a></li>
                 <li><a href="#">Pomoc</a></li>
                 <li><a href="#">Kontakt</a></li>
@@ -191,6 +230,7 @@ a:hover {
         </div>
         <div id="middle">
             <div id="sidebar"><div id="sidebar2" align="center">
+		    </br>
                     <h2 style="text-decoration: underline;">Producenci:</h2>
                     <ul>
                         <li><a target="blank" href="http://www.fawent.pl/">Favent</a></li>
@@ -225,12 +265,12 @@ a:hover {
 			<li><a href="/admin/">Zaloguj</a></li>
 		    </ul>
             </div></div>
-            <div id="right"><div id="right2">
+            <div id="right">
 
 		{% block content %}
 		{% endblock %}            	
 
-            </div></div>
+            </div>
             <div class="clearing">&nbsp;</div>
         </div>
         <div id="footer">
