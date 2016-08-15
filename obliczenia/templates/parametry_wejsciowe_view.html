@@ -1,12 +1,61 @@
 {% extends "baseweb/style_css/base.html"%}
 {% block content %}
 
+<style>
+	#id_pierwszy_strumien_wydajnosci
+	{
+		width:200px;
+		margin-left:150px;
+	}
+	#id_drugi_strumien_wydajnosci
+	{
+		width:200px;
+		margin-left: 150px;
+	}
+	#id_trzeci_strumien_wydajnosci
+	{
+		width: 200px;
+		margin-left:150px;;
+	}
+	#id_przyrost_cisnienia_calkowitego
+	{
+		width:200px;
+		margin-left:120px;	
+	}
+	#id_cisnienie_otoczenia
+	{
+                width:200px;
+                margin-left:180px;		
+	}
+	#id_temperatura_otoczenia
+	{
+                width:200px;
+                margin-left:170px;		
+	}
+	#id_n1{
+		width: 200px;
+		margin-left:250px;
+	}
+        #id_n2{
+		width: 200px;
+		margin-left:250px;
+	}
+	#id_n3{
+		width: 200px;
+		margin-left: 250px;
+	}
+</style>
+
 <center>
-     	<h1>Parametry poczatkowe:</h1>
+	</br></br>
+     	<h2 style="font: 30px Times;padding:20px;">Parametry wejsciowe</h2><hr style="width:500px;padding-left:200px;">
+	<br><br><br>
         <form method="POST" class="post-form">{% csrf_token %}
                              {{ form.as_p }}
-		<button type="submit" class="save btn btn-default">Submit</button>
+		<hr style="padding-left:200px; width: 500px;"></br>
+		<button style="width:400px;"  type="submit" class="save btn btn-default">Submit</button>
 	</form>
+	</br></br></br>
 </center>
 
 

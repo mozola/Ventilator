@@ -1,0 +1,56 @@
+{% extends "/home/asi/Projects/Django/Wentylator/obliczenia/templates/baseweb/style_css/base.html" %}
+{% block content %}
+
+<style>
+	#id_liczba_tlokow
+	{
+                width:200px;
+                margin-left: 250px;
+	}
+	#id_cykl_pracy
+	{
+                width:200px;
+                margin-left: 270px;
+	}
+	#id_objetosc_skokowa
+	{	
+                width:200px;
+                margin-left: 223px;
+	}
+	#id_maksymalne_obroty_silnika
+	{
+                width:200px;
+                margin-left: 170px;
+	}
+	#id_wspolczynnik_napelnienia
+	{
+                width:200px;
+                margin-left: 170px;
+	}
+	#id_moc_silnika
+	{
+                width:200px;
+                margin-left: 260px;
+	}
+	#id_sprawnosc_efektywna
+	{
+                width:200px;
+                margin-left: 200px;
+	}
+
+</style>
+
+<center>
+	<h1 style="font: 30px Times;padding:20px;">Test dzialania projektu</h1><hr>
+
+       <form method="POST" class="post-form">{% csrf_token %}
+                             {{ form.as_p }}
+                <hr style="padding-left:200px; width: 500px;"></br>
+                <button style="width:400px;"  type="submit" class="save btn btn-default">Submit</button>
+		<br><br><br>
+        </form>
+
+
+
+</center>
+{% endblock %}

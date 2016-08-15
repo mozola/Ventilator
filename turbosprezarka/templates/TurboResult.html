@@ -1,0 +1,135 @@
+{% extends "/home/asi/Projects/Django/Wentylator/obliczenia/templates/baseweb/style_css/base.html" %}
+{% block content %}
+
+<style>
+	.wyniki h1
+	{
+		padding: 5px;
+		font: 35px Times;
+	}
+	.wyniki hr
+	{
+		width:500px;
+		padding-left: 200px;
+	}
+	.wyniki table
+	{
+		width:900px;
+		border: 1px solid black;
+		background: grey
+	}
+	.wyniki table tr
+	{
+		border: 1px solid black;
+		height: 20px;	
+	}
+	.wyniki table tr td
+	{
+		border: 1px solid black;
+		height: 20px;
+		width: 100px;
+		font:20px Times;
+	}
+	.rysunek hr
+	{
+		width:500px;
+		padding-left: 200px;
+	}
+	.rysunek h1
+	{
+    	        padding: 20px;
+                font: 35px Times;
+	}
+	.rysunek canvas
+	{
+	        border: 1px solid black;
+                background: grey;
+
+	}
+</style>
+
+<center class="rysunek">
+	<h1>Rysunek techniczny</h1>
+	<hr>
+	</br>
+	
+	<canvas id="myCanvas" width="900" height="600">
+		Your browser does not support the HTML5 canvas tag.
+	</canvas>
+	<br>
+	<br>
+	<br>
+</center>
+
+<center class="wyniki">
+	<h1>Wyniki obliczen</h1><hr>
+	</br>
+	<table>
+		<tr>
+			<td>L.p.</td><td>Nazwa parametru:</td><td>Wartosc:</td><td>Ocena poprawnosci:</td>
+		</tr>
+		<tr>
+			<td>1</td><td></td><td></td><td></td>
+		</tr>
+                <tr>
+                        <td>2</td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                        <td>3</td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                        <td>4</td><td></td><td></td><td></td>
+                </tr>
+
+	</table>
+	<br><br><br>	
+</center>
+	
+
+<script>
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.moveTo(20,20);
+	ctx.lineTo(880,20);
+	ctx.lineTo(880,580);
+	ctx.lineTo(20,580);
+	ctx.lineTo(20,20);
+	ctx.stroke();
+	ctx.moveTo(880,450);
+	ctx.lineTo(500,450);
+	ctx.lineTo(500,580);
+	ctx.stroke();
+	ctx.moveTo(500,470);
+	ctx.lineTo(880,470);
+	ctx.stroke();
+	ctx.font = "15px Arial";
+	ctx.strokeText("Projektowal:",505,465);
+	ctx.moveTo(620,450);
+	ctx.lineTo(620,580);
+	ctx.stroke();
+	ctx.font = "15px Arial";
+	ctx.strokeText("Konstrulowal:",505,485);
+        ctx.moveTo(700,450);
+        ctx.lineTo(700,580);
+        ctx.stroke();
+        ctx.font = "15px Arial";
+        ctx.strokeText("Rysowal:",505,505);
+        ctx.moveTo(500,490);
+        ctx.lineTo(880,490);
+        ctx.stroke();
+        ctx.font = "15px Arial";
+        ctx.strokeText("Sprawdzal:",505,525);
+        ctx.moveTo(500,510);
+        ctx.lineTo(880,510);
+        ctx.stroke();
+        ctx.moveTo(750,450);
+        ctx.lineTo(750,580);
+        ctx.stroke();    
+        ctx.moveTo(810,450);
+        ctx.lineTo(810,580);
+        ctx.stroke();
+</script> 
+
+
+
+{% endblock %}

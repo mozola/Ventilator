@@ -1,7 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'Wentylator.views.home', name='home'),
@@ -12,4 +11,6 @@ urlpatterns = patterns('',
     url(r'^projects/$','obliczenia.views.projects'),
     url(r'^ventilator/calculation$','obliczenia.views.calculations'),
     url(r'^oprojekcie/$', 'obliczenia.views.oprojekcie'),
+    url(r'^turbosprezarka/parametry/$','turbosprezarka.views.TurboParametry'),
+    url(r'^turbosprezarka/results/$','turbosprezarka.views.TurboResult'),
 )

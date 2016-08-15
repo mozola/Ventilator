@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'obliczenia',
+    'turbosprezarka',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -83,3 +84,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT='/home/asi/Projects/Django/Wentylator/obliczenia/templates/baseweb/style_css'
+MEDIA_URL='/media/'
