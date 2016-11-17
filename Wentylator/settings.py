@@ -86,3 +86,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT='/home/asi/Projects/Django/Wentylator/obliczenia/templates/baseweb/style_css'
 MEDIA_URL='/media/'
+
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#)
