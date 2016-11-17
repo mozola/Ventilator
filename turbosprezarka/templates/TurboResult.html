@@ -43,8 +43,23 @@
 	.rysunek canvas
 	{
 	        border: 1px solid black;
-                background: grey;
+                background: darkgrey;
 
+	}
+	.result
+	{	
+		display:block;
+		text-align: left;
+	}
+	.result  p
+	{
+		display:inline;	
+	}
+	
+	.results hr
+	{
+		margin-left:10px;
+		width:900px;
 	}
 </style>
 
@@ -64,24 +79,75 @@
 <center class="wyniki">
 	<h1>Wyniki obliczen</h1><hr>
 	</br>
-	<table>
-		<tr>
-			<td>L.p.</td><td>Nazwa parametru:</td><td>Wartosc:</td><td>Ocena poprawnosci:</td>
-		</tr>
-		<tr>
-			<td>1</td><td></td><td></td><td></td>
-		</tr>
-                <tr>
-                        <td>2</td><td></td><td></td><td></td>
-                </tr>
-                <tr>
-                        <td>3</td><td></td><td></td><td></td>
-                </tr>
-                <tr>
-                        <td>4</td><td></td><td></td><td></td>
-                </tr>
+	<fieldset>
+		<legend>Obliczenia na wlocie do wirnika sprezarki:</legend>
+		<div class="results">
+			<br>
+			<br>
+			<div class="result">
+				<p>Strumien masy powietrza</p><p style="padding-left:175px;">{{ wyniki.strumien_masy_powietrza }}</p><p style="text-align:right">kolejny test</p>
+				<hr>
+				<p>Praca izentropowa</p><p style="padding-left:216px;">{{ wyniki.praca_izentropowa }}</p><p>kolejny test</p>
+				<hr>
+				<p>Temp. na wlocie</p><p style="padding-left:227px;">{{ wyniki.temperatura_w_przekroju_wejsciowym }}</p><p>kolejny test</p>
+				<hr>
+				<p>Predkosc obwodowa</p><p style="padding-left:202px;">{{ wyniki.predkosc_obwodowa }}</p><p>kolejny test</p>
+				<hr>
+				<p>Predkosc wzgledna na wlocie:</p><p style="padding-left:145px">{{ wyniki.predkosc_wzgledna_na_wlocie }}</p><p>kolejny test</p>
+				<hr>
+				<p>Predkosc unoszenia na wlocie:</p><p style="padding-left:143px;">{{ wyniki.u1 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Cisnienie na wlocie:</p><p style="padding-left:204px;">{{ wyniki.P1 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Kat wygiecia lopatki na wlocie:</p><p style="padding-left:134px;">{{ wyniki.beta1 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Wspolczynnik mocy sprezarki</p><p style="padding-left:145px;">{{ wyniki.mi }}</p><p>kolejny test</p>
+				<hr>
+				<p>Rzut pionowy predkosci bezwzglednej:</p><p style="padding-left:87px;">{{ wyniki.c2u }}</p><p>kolejny test</p>
+				<hr>
+				<p>Predkosc wylotowa z wirnika:</p><p style="padding-left:145px;">{{ wyniki.c2 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Predkosc wzgledna na wylocie:</p><p style="padding-left:133px;">{{ wyniki.w2  }}</p><p>kolejny test</p>
+				<hr>
+				<p>Kat wygiecia lopatki na wylocie:</p><p style="padding-left:125px;">{{ wyniki.beta2 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Temperatura na wyjsciu z wirnika:</p><p style="padding-left:118px;">{{ wyniki.T2 }}</p><p>kolejny test</p>
+				<hr>
+				<p>Cisnienie na wyjsciu z wirnika:</p><p style="padding-left:136px;">{{ wyniki.p2 }}</p><p></p>
+				<hr>
+				<p>Srednica wylotowa wirnika:</p><p style="padding-left:156px;">{{ wyniki.D2 }}</p><p></p>
+				<hr>
+				<p>Srednica wlotowa wirnika:</p><p style="padding-left:164px;">{{ wyniki.D1 }}</p><p></p>
+				<hr>
+				<p>Srednica piasty na wlocie do wirnika:</p><p style="padding-left:30px;">{{ wyniki.D0 }} </p><p>test dzialani</p>
+				<hr>
+				<p>Szerokosc kanalu wylotowego z wirnika:</p><p style="padding-left:7px;">{{ wyniki.b }}</p><p></p>
+				<hr>
+				<p>Wysokosc wirnika sprezarki:</p><p style="padding-left:152px;">{{ wyniki.h1 }}</p><p></p>
+				<hr>
+				<p>Promien krzywizny piasty:</p><p style="padding-left:164px;">{{ wyniki.rp }}</p><p></p>
+				<hr>
+				<p>Srednica wylotowa z dyfuzora:</p><p style="padding-left:139px;">{{ wyniki.T2_kr  }}</p><p></p>
+				<hr>
+				<p>Temperatura opuszczajaca dyfuzor:</p><p style="padding-left:112px">{{ wyniki.P2_kr  }}</p><p></p>
+				<hr>
+				<p>Wzrost cisnienia na wyjsciu z dyfuzora:</p><p style="padding-left:85px;">{{ wyniki.T3  }}</p><p></p>
+				<hr>
+				<p>Temperatura na wylocie z kolektora: </p><p style="padding-left:102px;">{{ wyniki.p3 }}</p><p></p>
+				<hr>
+				<p>Cisnienie na wyjsciu z kolektora: </p><p style="padding-left: 120px">  {{ wyniki.A3 }}</p><p></p>
+				<hr>
+				<p>Predkosc obrotowa:</p><p style="padding-left:206px">{{ wyniki.n }}</p><p></p>
+				<hr>
+				<p>Praca sprezarki:</p><p style="padding-left:232px;">{{ wyniki.ls }}</p><p></p>
+				<hr>
+				<p>Sprawnosc sprezarki:</p><p style="padding-left:200px">{{ wyniki.eta_s }}</p><p></p>
+				<hr>
+				<p>Moc napedowa sprezarki:</p><p style="padding-left:170px;">{{ wyniki.Ns }}</p><p></p>
+			</div>
+		</div>
 
-	</table>
+	</fieldset>
 	<br><br><br>	
 </center>
 	
@@ -99,28 +165,28 @@
 	ctx.lineTo(500,450);
 	ctx.lineTo(500,580);
 	ctx.stroke();
-	ctx.moveTo(500,470);
-	ctx.lineTo(880,470);
+	ctx.moveTo(500,475);
+	ctx.lineTo(880,475);
 	ctx.stroke();
 	ctx.font = "15px Arial";
-	ctx.strokeText("Projektowal:",505,465);
+	ctx.strokeText("Projektowal:",505,466);
 	ctx.moveTo(620,450);
 	ctx.lineTo(620,580);
 	ctx.stroke();
 	ctx.font = "15px Arial";
-	ctx.strokeText("Konstrulowal:",505,485);
+	ctx.strokeText("Konstrulowal:",505,493);
         ctx.moveTo(700,450);
         ctx.lineTo(700,580);
         ctx.stroke();
         ctx.font = "15px Arial";
-        ctx.strokeText("Rysowal:",505,505);
-        ctx.moveTo(500,490);
-        ctx.lineTo(880,490);
+        ctx.strokeText("Rysowal:",505,518);
+        ctx.moveTo(500,527);
+        ctx.lineTo(880,527);
         ctx.stroke();
         ctx.font = "15px Arial";
-        ctx.strokeText("Sprawdzal:",505,525);
-        ctx.moveTo(500,510);
-        ctx.lineTo(880,510);
+        ctx.strokeText("Sprawdzal:",505,547);
+        ctx.moveTo(500,555);
+        ctx.lineTo(880,555);
         ctx.stroke();
         ctx.moveTo(750,450);
         ctx.lineTo(750,580);
@@ -128,6 +194,9 @@
         ctx.moveTo(810,450);
         ctx.lineTo(810,580);
         ctx.stroke();
+	ctx.moveTo(500,500);
+	ctx.lineTo(880,500);
+	ctx.stroke();	
 </script> 
 
 
