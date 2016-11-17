@@ -168,7 +168,7 @@ def TurboResult(request):
           ls=1,
           eta_s=1,
           Ns=1,
-        # m_str_st=1,
+          m_str_st=1,
           B_st=1,
           rhot=1,
           Wt=1,
